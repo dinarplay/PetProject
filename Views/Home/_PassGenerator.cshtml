@@ -1,0 +1,18 @@
+﻿
+<div>
+    <form asp-action="GetPass" asp-controller="Home"  asp-antiforgery="true">
+         <div>
+            <div>
+                <input style="width:40px" name="longPass" type="number" value="true">
+                <input name="isCaps" type="checkbox" value="true">
+                <input name="isNumbers" type="checkbox" value="true">
+                <input name="isSymbols" type="checkbox" value="true">
+
+            </div>
+            <div>
+                <input type="submit" value="Создать" />
+            </div>
+        </div>
+    </form>
+</div>
+

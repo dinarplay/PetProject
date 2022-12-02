@@ -1,0 +1,60 @@
+﻿
+<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <ul class="nav nav-pills justify-content-center col-12 col-lg-auto me-lg-auto mb-2 mb-md-0">
+            <li class="nav-item">
+                    <a asp-action="Index" asp-controller="Home" class="nav-link active margin-five" aria-current="page">
+                        Главная
+                    </a>
+            </li>
+            <li class="nav-item">
+                    <a asp-action="Faq" asp-controller="Home" class="nav-link active margin-five" aria-current="page"
+                    data-ajax="true" data-ajax-mode="replace" data-ajax-update="#main-content" data-ajax-success="OnSpace">
+                        Вопросы и ответы
+                    </a>
+            </li>
+            <li class="nav-item">
+                    <a asp-action="Contacts" asp-controller="Home" class="nav-link active margin-five" aria-current="page" 
+                    data-ajax="true" data-ajax-mode="replace" data-ajax-update="#main-content" data-ajax-success="OnSpace" data-ajax-loading="#spinner">
+                        Контакты
+                    </a>
+            </li>
+        </ul>  
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+            <input type="search" class="form-control" placeholder="Поиск..." aria-label="Поиск">
+        </form>
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="text-end">
+                <ul class="nav nav-pills justify-content-center col-12 col-lg-auto me-lg-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                            <a asp-action="About" asp-controller="Auth" class="nav-link active margin-five profie-icon" aria-current="page">
+                                @User.FindFirst("Name").Value[0].ToString().ToUpper()
+                            </a>
+                    </li>
+                </ul> 
+            </div>
+        }
+        else
+        {
+            <div class="text-end">
+                <ul class="nav nav-pills justify-content-center col-12 col-lg-auto me-lg-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                            <a asp-action="Login" asp-controller="Auth" class="nav-link active margin-five" aria-current="page">
+                                Вход
+                            </a>
+                    </li>
+                    <li class="nav-item">
+                            <a asp-action="Registration" asp-controller="Auth" class="nav-link active margin-five" aria-current="page">
+                                Регистрация
+                            </a>
+                    </li>
+                </ul> 
+            </div>
+            @*<div class="text-end margin-five">
+                <button asp-action="Login" asp-controller="Auth" type="button" class="btn btn-outline-light"><ya-tr-span data-index="23-0" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Login" data-translation="Вход" data-ch="1" data-type="trSpan">Вход</ya-tr-span></button>
+                <button asp-action="Registration" asp-controller="Auth"type="button" class="btn btn-outline-light"><ya-tr-span data-index="23-1" data-translated="true" data-source-lang="en" data-target-lang="ru" data-value="Sign-up" data-translation="Регистрация" data-ch="1" data-type="trSpan">Регистрация</ya-tr-span></button>
+            </div>*@
+        }
+</div>

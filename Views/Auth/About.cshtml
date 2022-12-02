@@ -1,0 +1,9 @@
+﻿
+<div class="text-left">
+    <h3>Информация о пользователе</h3>
+    <hr />
+    @foreach (var item in User.Claims)
+    {
+        <h4>@item.Type - @item.Value</h4>
+    }
+</div>

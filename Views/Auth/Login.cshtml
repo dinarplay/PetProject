@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model UserLogin
+
+<head>
+    
+        <link rel="stylesheet" asp-href-include="~/css/**/*.css" asp-append-version="true"/>  
+        <script asp-src-include="~/js/**/*.js" asp-append-version="true"></script>      
+
+        <script src="https://ajax.microsoft.com/ajax/jQuery/jquery-3.6.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.js"
+                asp-fallback-test="window.jQuery"
+                asp-append-version="true"
+                crossorigin="anonymous"
+                integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"></script>
+
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        @{await Html.RenderPartialAsync("_AjaxScriptsPartial");}
+</head>
+
+<div class="auth-form">
+        <h2>Login</h2>
+        <form asp-antiforgery="true" asp-action="Login" asp-controller="Auth">
+
+                <div class="validation" asp-validation-summary="ModelOnly"></div>                
+                <div>
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" />
+                    <span asp-validation-for="Email"></span>
+                </div>
+                <div>
+                    <label asp-for="Password"></label>
+                    <input type="password" asp-for="Password"/>
+                    <span asp-validation-for="Password"></span>
+                </div>
+                <div>
+                    <input type="submit" value="Вход"/>
+                </div>
+
+        </form>         
+</div>
