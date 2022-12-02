@@ -1,0 +1,52 @@
+﻿@*Мастер-страница*@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"]</title>
+
+        <link rel="stylesheet"
+                href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+                asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.css"
+                asp-fallback-test-class="sr-only" asp-fallback-test-property="position"
+                asp-fallback-test-value="absolute"
+                asp-append-version="true"
+                crossorigin="anonymous"
+                integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"/>
+        <link rel="stylesheet" asp-href-include="~/css/**/*.css" asp-append-version="true"/>
+
+        <script src="https://ajax.microsoft.com/ajax/jQuery/jquery-3.6.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.js"
+                asp-fallback-test="window.jQuery"
+                asp-append-version="true"
+                crossorigin="anonymous"
+                integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"></script>
+
+        <script asp-src-include="~/js/**/*.js" asp-append-version="true"></script>
+        
+        @*@RenderSection("ValScripts", false)
+        @RenderSection("AjaxScripts", false)*@
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        @{await Html.RenderPartialAsync("_AjaxScriptsPartial");}
+
+    </head>
+    <body>
+
+        <div class="container abs-top">
+            <div class="item header">   @{await Html.RenderPartialAsync("~/Views/Shared/Partials/_Header.cshtml");} </div>
+            <div class="item sidebar">  @{await Html.RenderPartialAsync("~/Views/Shared/Partials/_Sidebar.cshtml");} </div>
+            <div class="item content">
+                <div class="content-in-main" id="main-content"><span id="spinner" style="display:none;"><img src="~/files/spiner.gif"/></span>
+                    @RenderBody()
+                </div>
+            </div>
+            <div class="item ads"><p>Ads</p></div>
+            <div class="item footer">
+                @RenderSection("Footer", false)<p>2022</p>
+            </div>
+        </div>
+
+    </body>
+</html>

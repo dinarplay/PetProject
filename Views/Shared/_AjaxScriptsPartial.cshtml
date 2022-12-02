@@ -1,0 +1,17 @@
+﻿    <script src="~/lib/jquery-ajax/dist/jquery.unobtrusive-ajax.min.js"></script>  
+    <script type="text/javascript">
+
+        function OnSuccess()
+        {
+            $.validator.unobtrusive.parse(document);
+        }
+        
+        function OnSpace() 
+        {
+            $('.container, .container *').contents().each(function() {
+                if (this.nodeType === 3) { // text node
+                    this.textContent = this.textContent.replace(/\u00A0/g, '');
+                }
+            });
+        }
+    </script>

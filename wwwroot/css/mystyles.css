@@ -1,0 +1,198 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #727271;
+    color: white;
+}
+
+a {
+    color: rgb(34 61 91);
+    text-decoration: none;
+}
+ul > li {
+    list-style-position: inside;
+    list-style-type: none;
+}
+/*По классу*/
+.item {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #383838;
+}
+
+.container {
+    display: grid;
+    max-width: 100%;
+    height: 100%;
+    grid-template-columns: 150px 1fr 120px;
+    grid-template-rows: auto 1fr;
+    grid-gap: 1px;
+    justify-content: center;
+    align-content: start;
+    align-items: center;
+    justify-items: stretch;
+    grid-template-areas:
+        'header header header'
+        'sidebar content ads'
+        'footer footer footer';
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.header {
+    grid-area: header;
+    background-color: #21201f;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    align-self: start;
+}
+
+.content {
+    grid-area: content;
+    min-height: 100px;
+    align-self: start;
+}
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    background-color: #21201f;
+}
+
+.ads {
+    grid-area: ads;
+    align-self: start;
+}
+/*          */
+.item_3 {
+    justify-self: center;
+    align-self: end;
+}
+
+.item_6 {
+    grid-column: 1/3;
+
+}
+/*Мои классы*/
+.auth-form {
+    margin: auto;
+    width: 15%;
+    background-color: #383838;
+    padding: 30px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    font-family: "Roboto", sans-serif;
+}
+
+.auth-form input{
+    width: 100%;
+    height: 30px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+}
+
+.auth-form div{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.auth-form label{
+    float: left;
+}
+.auth-form h2{
+    text-align: center;
+}
+
+.content-in-main {
+    background-color: #727271;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    text-align: center;
+}
+.margin-five
+{
+    margin: 5px;
+}
+.pm-zero
+{
+    margin: 0;
+    padding: 0;
+}
+.text-left {
+    text-align: left;
+}
+.abs-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+.nav-pills .nav-link.active {
+    color: #fff;
+    background-color: #383838;
+}
+
+.nav-pills .nav-link.active:hover {    
+    background-color: #727271;
+}
+
+.profie-icon{
+    border-radius: 20px;
+    background-color: #ef6817;
+}
+/*По ID*/
+#result {
+    margin: 5px;
+    padding: 5px;
+    border: solid 1px;
+}
+#result > form > div > label {
+    height:25px;
+    width: 60px;
+    text-align: center;
+}
+#result > form > div > input[type=submit] {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+/*Валидация*/
+.field-validation-error {
+    color: #ffb7b5;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 2px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors ul > li {
+    color: #ffb7b5;
+}
+
+.validation-summary-valid {
+    display: none;
+}
